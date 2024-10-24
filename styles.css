@@ -1,322 +1,90 @@
-/* Reset básico */
-* {
+/* Fundo com o mesmo estilo das outras páginas */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background: url('https://images.hdqwalls.com/download/ios-13-grey-dark-5k-r6-2560x1440.jpg') no-repeat center center fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/background.jpg') no-repeat center center fixed;
     background-size: cover;
-    color: white;
-    text-align: center;
-    min-height: 100vh;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* Estilos para o header */
-header {
-    background: #000;
-    padding: 10px 20px;
-    width: 100%;
-}
-
+/* Barra de navegação */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8); /* Transparência na navbar */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px 0;
+    z-index: 1000;
 }
 
-.navbar .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+.navbar .logo a {
     color: #fff;
+    text-transform: uppercase;
+    font-size: 24px;
+    text-decoration: none;
 }
 
 .navbar ul {
-    display: flex;
     list-style: none;
-}
-
-.navbar ul li {
-    margin-left: 20px;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
 }
 
 .navbar ul li a {
-    color: white;
+    color: #fff;
     text-decoration: none;
-    font-weight: 600;
-    padding: 10px 15px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
 }
 
-.navbar ul li a:hover {
-    background-color: #333;
-    transform: scale(1.1); /* Leve aumento ao passar o mouse */
-    text-decoration: underline;
-}
-
-/* Hero Section */
-.hero {
-    padding: 100px 20px;
-    flex-grow: 1;
-}
-
-.hero h1 {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    color: #e6e6e6;
-}
-
-/* Footer */
-
-footer {
-    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro com opacidade */
-    padding: 20px; /* Aumenta o padding para dar mais espaço à barra */
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 100px; /* Aumenta a altura da barra */
-}
-
-footer img.about-logo {
-    width: 80px; /* Aumenta um pouco o tamanho da logo */
-    height: auto;
-    display: block;
-    margin: 0 auto 10px;
-}
-
-footer p {
-    font-size: 14px; /* Aumenta um pouco o tamanho do texto */
-    color: #ccc;
-    margin: 0;
-    line-height: 1.6;
-}
-
-
-/* Seção: Sobre WhiteZ */
-.about-section {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro com opacidade */
-    border-radius: 10px;
-    color: #fff;
-}
-
-.about-section p {
-    font-size: 16px; /* Ajuste do tamanho do texto */
-    line-height: 1.5;
-}
-
-/* Fixação do footer */
-html, body {
+/* Seção principal da página "Sobre" */
+.sobre-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
-    position: relative;
-}
-
-main {
+    text-align: center;
     flex-grow: 1;
-    padding-bottom: 100px; /* Para evitar sobreposição com o footer */
+    padding-top: 100px; /* Para ajustar com a navbar fixa */
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escuro */
-    padding: 10px 0;
-    z-index: 100;
-}
-/* Reset padrão */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Estilos gerais da barra de navegação */
-.navbar {
-    background-color: black;
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    height: 60px;
-}
-
-.nav-links {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-around;
-    width: 50%; /* Mantém os itens espaçados de forma uniforme */
-}
-
-.nav-links li {
-    margin: 0 20px; /* Espaçamento entre os itens */
-}
-
-.nav-links a {
-    position: relative;
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out; /* Transição suave de cor */
-}
-
-.nav-links a::before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px; /* Sub-linha fica logo abaixo do texto */
-    left: 0;
-    background-color: white; /* Cor da sub-linha */
-    visibility: hidden;
-    transition: all 0.3s ease-in-out; /* Animação suave ao passar o mouse */
-}
-
-.nav-links a:hover {
-    color: gray; /* Muda a cor do texto ao passar o mouse */
-}
-
-.nav-links a:hover::before {
-    visibility: visible;
-    width: 100%; /* Sub-linha cresce ao passar o mouse */
-}
-
-.navbar a.active {
-    color: #f0f0f0; /* Cor mais clara para o item ativo */
-    border-bottom: 2px solid white; /* Linha de destaque no item ativo */
-}
-
-.nav-links a.active::before {
-    visibility: visible;
-    width: 100%;
-}
-
-/* Estilos adicionais para garantir que o conteúdo da página esteja visível */
-.content {
-    margin-top: 60px;
-    padding: 20px;
-}
-
-
-/* Adicionando margem nas caixas de jogo */
-.game-container {
-    margin-top: 150px;  /* Adicionando margem superior para dar espaço à barra de navegação */
-}
-
-/* Estilos das caixas de jogos */
-.game-card {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    width: 200px;
-    text-align: center;
-    margin: 20px;
-    transition: transform 0.3s ease;
-}
-
-.game-card:hover {
-    transform: scale(1.1);
-}
-
-
-/* Estilos adicionais para garantir que o conteúdo da página esteja visível */
-.content {
-    margin-top: 60px;
-    padding: 20px;
-}
-
-
-
-/* Estilo da seção de loja */
-.loja {
+.development-message {
+    background: rgba(0, 0, 0, 0.7);
     padding: 40px;
-    background-color: #111; /* Fundo escuro */
-    min-height: 100vh; /* Permite rolagem se necessário */
-    display: flex;
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    align-items: flex-start; /* Alinha o conteúdo ao topo */
-    margin-top: 60px; /* Espaço maior entre a barra de navegação e as caixas */
+    border-radius: 10px;
 }
 
-/* Ajuste da grid de jogos */
-.game-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
-    gap: 30px; /* Espaço entre as caixas */
-    width: 90%; /* Reduz a largura total da grid para deixar bordas maiores */
-    max-width: 1200px; /* Define um limite máximo de largura para a grid */
-    margin: 0 auto; /* Centraliza a grid horizontalmente */
+.development-message h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
-/* Estilo para as caixas de jogo */
-.game-box {
-    background-color: #222; /* Fundo da caixa */
-    border: 3px solid transparent; /* Borda inicial */
-    transition: border-color 0.3s ease, transform 0.3s ease;
-    padding: 10px; /* Reduz o padding para deixar a caixa menor */
-    text-align: center;
-    cursor: pointer;
-    height: 300px; /* Aumenta a altura da caixa */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Distribui o conteúdo verticalmente */
-    overflow: hidden; /* Garante que o conteúdo não transborde da caixa */
+/* Imagem animada */
+.animated-image {
+    width: 150px;
+    height: 150px;
+    animation: spin 4s linear infinite;
+    margin-top: 20px;
 }
 
-/* Ajuste para as imagens dos jogos */
-.game-box img {
-    width: 100%; /* Faz com que a imagem ocupe 100% da largura da caixa */
-    height: 180px; /* Aumenta a altura da imagem */
-    object-fit: cover; /* Faz com que a imagem se ajuste à caixa sem distorção */
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-/* Estilo dos textos nas caixas */
-.game-info h3 {
-    margin: 5px 0;
-    font-size: 16px; /* Tamanho do título */
-    color: white;
-}
-
-.game-info p {
-    font-size: 14px; /* Tamanho da descrição */
-    color: #ddd;
-}
-
-/* Efeito interativo nas bordas ao passar o mouse */
-.game-box:hover {
-    border-color: #830594; /* Cor de destaque da borda ao passar o mouse */
-    transform: scale(1.05); /* Aumenta levemente a caixa */
-}
-
-/* Estilo responsivo para telas menores */
-@media (max-width: 1200px) {
-    .game-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
     }
-}
-
-@media (max-width: 768px) {
-    .game-grid {
-        grid-template-columns: 1fr; /* 1 coluna em telas pequenas */
-    }
-
-    .game-box {
-        height: auto; /* Deixa a altura automática em telas menores */
+    to {
+        transform: rotate(360deg);
     }
 }
