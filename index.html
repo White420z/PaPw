@@ -1,35 +1,93 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>WhiteZ - Home</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
-    <!-- Barra de Navegação -->
-    <nav class="navbar">
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="loja.html">Loja</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="suporte.html">Suporte</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
-    </nav>
+    <!-- Barra de navegação -->
+    <header>
+        <nav class="navbar">
+        
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="loja.html">Loja</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="suporte.html">Suporte</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Conteúdo da Página -->
-    <div class="content">
-        <!-- Conteúdo específico da página -->
-           <!-- Seção: Sobre WhiteZ -->
+    <!-- Hero Section Dinâmica -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bem-vindo ao Universo WhiteZ</h1>
+            <p>Descubra os melhores jogos, aplicações e lançamentos!</p>
+            <a href="loja.html" class="btn-primary">Explore a Loja</a>
+        </div>
+    </section>
+
+    <!-- Seção de Destaques com Carrossel -->
+    <section class="destaques">
+        <h2>Destaques</h2>
+        <div class="carrossel">
+            <div class="slide">
+                <img src="https://via.placeholder.com/600x300" alt="Jogo Destaque 1">
+                <h3>Jogo em Destaque 1</h3>
+                <p>Descrição breve do jogo em destaque.</p>
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/600x300" alt="Jogo Destaque 2">
+                <h3>Jogo em Destaque 2</h3>
+                <p>Descrição breve do jogo em destaque.</p>
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/600x300" alt="Jogo Destaque 3">
+                <h3>Jogo em Destaque 3</h3>
+                <p>Descrição breve do jogo em destaque.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Novidades/Lançamentos -->
+    <section class="novidades">
+        <h2>Novidades e Lançamentos</h2>
+        <div class="game-grid">
+            <div class="game-box">
+                <img src="https://via.placeholder.com/300x200" alt="Novo Jogo 1">
+                <h3>Novo Jogo 1</h3>
+                <p>Lançamento especial!</p>
+            </div>
+            <div class="game-box">
+                <img src="https://via.placeholder.com/300x200" alt="Novo Jogo 2">
+                <h3>Novo Jogo 2</h3>
+                <p>Veja as novidades.</p>
+            </div>
+            <div class="game-box">
+                <img src="https://via.placeholder.com/300x200" alt="Novo Jogo 3">
+                <h3>Novo Jogo 3</h3>
+                <p>Confira o lançamento!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Parcerias -->
+    <section class="parcerias">
+        <h2>Nossas Parcerias</h2>
+        <div class="parceria-grid">
+            <img src="https://via.placeholder.com/200x100" alt="Parceiro 1">
+            <img src="https://via.placeholder.com/200x100" alt="Parceiro 2">
+            <img src="https://via.placeholder.com/200x100" alt="Parceiro 3">
+        </div>
+    </section>
+
+    <!-- Rodapé -->
     <footer>
-        <img src="images/logowhite.png" alt="Logo WhiteZ" class="about-logo">
-        <p>
-           Somos a plataforma ideal para baixar e gerir jogos e aplicativos de forma centralizada.
-           Desenvolvido com foco no usuário, oferecemos a melhor experiência online para gamers e entusiastas de tecnologia.
-        </p>
+        <p>&copy; 2024 WhiteZ. Todos os direitos reservados.</p>
     </footer>
-    </div>
+
 </body>
 </html>
-
