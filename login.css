@@ -1,0 +1,196 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('https://images.hdqwalls.com/download/ios-13-grey-dark-5k-r6-2560x1440.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos da barra de navegação */
+.navbar {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: white;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: gray;
+}
+
+.nav-links a:hover::before {
+    visibility: visible;
+    width: 100%;
+}
+
+.navbar a.active {
+    color: #f0f0f0;
+    border-bottom: 2px solid white;
+}
+
+.nav-links a.active::before {
+    visibility: visible;
+    width: 100%;
+}
+
+/* Estilo da caixa de login */
+.login-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.1); /* Fundo transparente */
+    backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+    padding: 40px;
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
+    width: 350px;
+    text-align: center;
+    color: white;
+}
+
+/* Logo no topo */
+.logo h1 {
+    font-size: 32px;
+    color: white;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+/* Estilos do formulário */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 16px;
+}
+
+.input-group input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #5c1894;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #000;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #ff9900;
+}
+
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+/* Estilo para o botão de Login */
+.login-box button {
+    background-color: #555555; /* Tom de cinzento */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.login-box button:hover {
+    background-color: #777777; /* Tom de cinzento mais claro ao passar o mouse */
+}
+
+/* Estilo para os links "Esqueceu a sua senha" e "Criar conta" */
+.login-box a {
+    color: #777777; /* Cinzento */
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.login-box a:hover {
+    color: #999999; /* Cinzento mais claro ao passar o mouse */
+}

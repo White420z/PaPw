@@ -1,0 +1,157 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background-color: #111; /* Cor do fundo (preto/cinza) */
+}
+
+/* Estilo da barra de navegação (navbar) */
+.navbar {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    position: sticky; /* Mantém a barra de navegação fixa no topo durante o scroll */
+    top: 0;
+    z-index: 1000; /* Garante que a barra de navegação fique sempre visível */
+}
+
+/* Restante do código segue igual */
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    width: 50%; /* Mantém os itens espaçados de forma uniforme */
+}
+
+.nav-links li {
+    margin: 0 20px; /* Espaçamento entre os itens */
+}
+
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out; /* Transição suave de cor */
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px; /* Sub-linha fica logo abaixo do texto */
+    left: 0;
+    background-color: white; /* Cor da sub-linha */
+    visibility: hidden;
+    transition: all 0.3s ease-in-out; /* Animação suave ao passar o mouse */
+}
+
+.nav-links a:hover {
+    color: gray; /* Muda a cor do texto ao passar o mouse */
+}
+
+.nav-links a:hover::before {
+    visibility: visible;
+    width: 100%; /* Sub-linha cresce ao passar o mouse */
+}
+
+.navbar a.active {
+    color: #f0f0f0; /* Cor mais clara para o item ativo */
+    border-bottom: 2px solid white; /* Linha de destaque no item ativo */
+}
+
+.nav-links a.active::before {
+    visibility: visible;
+    width: 100%;
+}
+
+/* Estilo da seção de loja */
+.loja {
+    padding: 40px;
+    background-color: #111; /* Fundo preto/cinzento */
+    min-height: 100vh; /* Permite rolagem se necessário */
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: flex-start; /* Alinha o conteúdo ao topo */
+    margin-top: 100px; /* Aumenta o espaço entre a barra de navegação e as caixas */
+}
+
+/* Ajuste da grid de jogos */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 30px; /* Espaço entre as caixas */
+    width: 90%; /* Reduz a largura total da grid para deixar bordas maiores */
+    max-width: 1200px; /* Define um limite máximo de largura para a grid */
+    margin: 0 auto; /* Centraliza a grid horizontalmente */
+}
+
+/* Estilo para as caixas de jogo */
+.game-box {
+    background-color: #222; /* Fundo da caixa */
+    border: 3px solid transparent; /* Borda inicial */
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    padding: 10px; /* Reduz o padding para deixar a caixa menor */
+    text-align: center;
+    cursor: pointer;
+    height: 320px; /* Aumenta a altura da caixa */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribui o conteúdo verticalmente */
+    overflow: hidden; /* Garante que o conteúdo não transborde da caixa */
+}
+
+/* Ajuste para as imagens dos jogos */
+.game-box img {
+    width: 100%; /* Faz com que a imagem ocupe 100% da largura da caixa */
+    height: 200px; /* Aumenta a altura da imagem */
+    object-fit: cover; /* Faz com que a imagem se ajuste à caixa sem distorção */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Estilo dos textos nas caixas */
+.game-info h3 {
+    margin: 5px 0;
+    font-size: 16px; /* Tamanho do título */
+    color: white;
+}
+
+.game-info p {
+    font-size: 14px; /* Tamanho da descrição */
+    color: #ddd;
+}
+
+/* Efeito interativo nas bordas ao passar o mouse */
+.game-box:hover {
+    border-color: #830594; /* Cor de destaque da borda ao passar o mouse */
+    transform: scale(1.05); /* Aumenta levemente a caixa */
+}
+
+/* Estilo responsivo para telas menores */
+@media (max-width: 1200px) {
+    .game-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
+    }
+}
+
+@media (max-width: 768px) {
+    .game-grid {
+        grid-template-columns: 1fr; /* 1 coluna em telas pequenas */
+    }
+
+    .game-box {
+        height: auto; /* Deixa a altura automática em telas menores */
+    }
+}

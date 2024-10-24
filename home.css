@@ -1,0 +1,263 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('https://images.hdqwalls.com/download/ios-13-grey-dark-5k-r6-2560x1440.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Estilo da barra de navegação (navbar) */
+.navbar {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    position: sticky; /* Mantém a barra de navegação fixa no topo durante o scroll */
+    top: 0;
+    z-index: 1000; /* Garante que a barra de navegação fique sempre visível */
+}
+
+/* Restante do código segue igual */
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    width: 50%; /* Mantém os itens espaçados de forma uniforme */
+}
+
+.nav-links li {
+    margin: 0 20px; /* Espaçamento entre os itens */
+}
+
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out; /* Transição suave de cor */
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px; /* Sub-linha fica logo abaixo do texto */
+    left: 0;
+    background-color: white; /* Cor da sub-linha */
+    visibility: hidden;
+    transition: all 0.3s ease-in-out; /* Animação suave ao passar o mouse */
+}
+
+.nav-links a:hover {
+    color: gray; /* Muda a cor do texto ao passar o mouse */
+}
+
+.nav-links a:hover::before {
+    visibility: visible;
+    width: 100%; /* Sub-linha cresce ao passar o mouse */
+}
+
+.navbar a.active {
+    color: #f0f0f0; /* Cor mais clara para o item ativo */
+    border-bottom: 2px solid white; /* Linha de destaque no item ativo */
+}
+
+.nav-links a.active::before {
+    visibility: visible;
+    width: 100%;
+}
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    flex-direction: column;
+    padding-top: 80px; /* Compensar a barra de navegação fixa */
+    opacity: 0; /* Inicialmente invisível */
+    animation: fadeIn 2s ease forwards; /* Animação de fade-in */
+}
+
+/* Animação do texto */
+.hero h1 {
+    font-size: 4rem;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeInText 2s 0.5s ease forwards; /* Fade in do texto com atraso */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    opacity: 0;
+    animation: fadeInText 2s 1s ease forwards; /* Fade in do texto com um atraso maior */
+}
+
+/* Efeito especial no botão */
+.hero .btn-primary {
+    padding: 10px 30px;
+    background-color: #ffcc00;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(20px); /* Começa mais abaixo */
+    animation: slideInButton 1s 1.5s ease forwards; /* Animação de deslizamento para o botão */
+    transition: background-color 0.3s;
+}
+
+.hero .btn-primary:hover {
+    background-color: #e6b800;
+}
+
+/* Animação fade-in para a seção Hero */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Fade-in para o texto com atraso */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Efeito de deslizamento e fade-in para o botão */
+@keyframes slideInButton {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Começa fora da posição final */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Volta para a posição final */
+    }
+}
+
+/* Seção de Destaques */
+.destaques {
+    padding: 60px 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+.destaques h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.carrossel {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.carrossel .slide {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.carrossel .slide:hover {
+    transform: scale(1.05);
+}
+
+.carrossel img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Seção de Novidades */
+.novidades {
+    padding: 60px 20px;
+    background-color: rgba(20, 20, 20, 0.9);
+}
+
+.novidades h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.game-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.game-box {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.game-box img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.game-box:hover {
+    transform: scale(1.05);
+}
+
+/* Seção de Parcerias */
+.parcerias {
+    padding: 60px 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+.parcerias h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.parceria-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.parceria-grid img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

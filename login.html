@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - WhiteZ</title>
+    <link rel="stylesheet" href="login.css"> <!-- Arquivo CSS separado -->
+</head>
+<body>
+    <!-- Barra de navegação -->
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="loja.html">Loja</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="suporte.html">Suporte</a></li>
+                <li><a href="login.html" class="active">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo de Login -->
+    <div class="login-container">
+        <div class="login-box">
+            <div class="logo">
+                <h1>WhiteZ</h1> <!-- Simulação do logo com texto -->
+            </div>
+            <form action="dashboard.html" method="POST">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn-login">Entrar</button>
+            </form>
+            <div class="links">
+                <a href="#">Esqueceu a sua senha?</a>
+                <a href="#">Criar conta</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
