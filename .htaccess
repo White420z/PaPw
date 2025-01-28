@@ -2,13 +2,3 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-
-<IfModule mod_rewrite.c>
-RewriteEngine On 
-RewriteBase /
-DirectoryIndex index.php RewriteRule ^index.php$ [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d RewriteRule. /index.php [L] </IfModule>
-FilesMatch "^(mod_config.php)$"> Order Allow, Deny
-Allow from all
-</FilesMatch>
